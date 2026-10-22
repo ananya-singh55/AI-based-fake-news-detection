@@ -180,7 +180,6 @@ function SignalRow({ name, desc, value, note }) {
         {note && (
           <span
             className="mt-2 block text-xs leading-relaxed"
-            className="text-xs leading-relaxed"
             style={{ color: C.textDim }}
           >
             {note}
