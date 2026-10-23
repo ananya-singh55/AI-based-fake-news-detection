@@ -109,7 +109,7 @@ describe("Veritas app", () => {
   });
 
   test("shows an alert for incorrect credentials", async () => {
-    const alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
+    vi.stubGlobal("alert", vi.fn());
 
     render(<VeritasApp />);
     const navButtons = screen.getAllByRole("button", {
@@ -126,7 +126,7 @@ describe("Veritas app", () => {
       "wrongpass{Enter}"
     );
 
-    expect(alertSpy).toHaveBeenCalledWith("Invalid username or password.");
+    expect(window.alert).toHaveBeenCalledWith("Invalid username or password.");
   });
 
   test("analyzer does not call the backend for empty input", async () => {
