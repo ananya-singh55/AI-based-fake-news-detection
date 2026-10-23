@@ -51,13 +51,13 @@ const NAV = [
 
 
 
-function toneColor(tone) {
+export function toneColor(tone) {
   if (tone === "teal" || tone === "real") return C.teal;
   if (tone === "red" || tone === "fake") return C.red;
   return C.amber;
 }
 
-function timeAgo(date) {
+export function timeAgo(date) {
   const s = Math.floor((Date.now() - date.getTime()) / 1000);
 
   if (s < 60) return "just now";
@@ -956,7 +956,7 @@ function Dashboard({
             className="text-sm"
             style={{ color: C.textFaint }}
           >
-            Nothing checked yet Ã¢â‚¬â€ run your first
+            Nothing checked yet, run your first
             story through the analyzer.
           </p>
         </Card>
